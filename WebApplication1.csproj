@@ -157,9 +157,19 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\JsonpResult.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Logic\JacksOrBetterLogic.cs" />
+    <Compile Include="Logic\BlackJackLogic.cs" />
+    <Compile Include="Logic\Extensions.cs" />
+    <Compile Include="Models\BlackJack\Actions.cs" />
+    <Compile Include="Models\BlackJack\Card.cs" />
+    <Compile Include="Models\BlackJack\Deck.cs" />
+    <Compile Include="Models\BlackJack\RANK.cs" />
+    <Compile Include="Models\BlackJack\SUIT.cs" />
+    <Compile Include="Models\JacksOrBetter\JoBmoves.cs" />
     <Compile Include="Models\Mutate2048.cs" />
     <Compile Include="Models\RecRateResult.cs" />
     <Compile Include="Models\State2048.cs" />
@@ -168,10 +178,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="JacksOrBetter.js" />
+    <Content Include="BlackJack.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="KeyboardInputManager.js" />
+    <Content Include="Tile20148.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

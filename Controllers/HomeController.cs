@@ -4,11 +4,50 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WebApplication1.Logic;
+using WebApplication1.Models.BlackJack;
 
 namespace WebApplication1.Controllers
 {
     public class HomeController : Controller
     {
+        [HttpGet]
+        public JsonpResult JacksOrBetter(Actions[] buttons, string[] player)
+        {
+            JacksOrBetterLogic logic = new JacksOrBetterLogic(buttons, player);
+            var move = logic.GetValidateMove();
+
+            return new JsonpResult
+            {
+                Data = move,
+                JsonRequestBehavior = JsonRequestBehavior.AllowGet
+            };
+        }
+
+
+         [HttpGet]
+        public JsonpResult GetBestMoveBJ(Actions[] buttons, string[] player, string[] dealer)
+        {
+            BlackJackLogic logic = new BlackJackLogic(buttons, player, dealer);
+            int move = logic.GetValidateMove();
+
+            return new JsonpResult
+            {
+                Data = move,
+                JsonRequestBehavior = JsonRequestBehavior.AllowGet
+            };
+        }
+
+        [HttpGet]
+        public JsonpResult test()
+        {
+            return new JsonpResult
+            {
+                Data = "Hello from server!",
+                JsonRequestBehavior = JsonRequestBehavior.AllowGet
+            };
+        }
+
         public JsonResult GetBestMove(string[] arr)
         {
             State2048 state = new State2048(4, 4);

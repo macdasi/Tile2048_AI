@@ -45,13 +45,12 @@
                         {
                             jQuery('a.continue-button')[0].click();
                         }
-                        else if ($("a.retry-button").is(":visible") == true)
+                        else if ($("a.retry-button").is(":visible") == true)//Try again game over
                         {
                             jQuery('a.retry-button')[0].click();
                         }
-                        
                     }
-                    transition_timer = setTimeout(transition1, 600);
+                    transition_timer = setTimeout(transition1, 700);
                     
                 }
             });

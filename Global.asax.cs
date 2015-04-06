@@ -14,6 +14,14 @@ namespace WebApplication1
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+           
         }
+
+        protected void Application_BeginRequest()
+        {
+            HttpContext.Current.Response.AddHeader("Access-Control-Allow-Origin", "*");
+        }
+
+      
     }
 }
